@@ -1,0 +1,6 @@
+# Python dependencies for the PC/Ubuntu side.
+# The PYNQ board image already provides numpy/jupyter; matplotlib is optional
+# and only used by tools/collect_dataset.py --plot and report/assets/make_figures.py.
+numpy>=1.19
+matplotlib>=3.3
+jupyter>=1.0

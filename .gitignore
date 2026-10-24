@@ -1,0 +1,38 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Vivado / Vitis generated files
+*.jou
+*.str
+*.log
+*.wdb
+*.pb
+*.rpx
+.Xil/
+*.runs/
+*.cache/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.gen/
+
+# Keep only the final board overlay in Git
+stage*/*.bit
+stage*/*.hwh
+release/overlay/
+
+# Local scratch
+data/_tmp*
+data/_hard_pairs_test.csv
+
+# Packaged handoff bundles
+report_handoff*/
+report_handoff*.zip
+*.zip
+
+# Local reference material with a non-English filename
+参考文档.docx
+
+# Preserve the final soak evidence log
+!soak.log

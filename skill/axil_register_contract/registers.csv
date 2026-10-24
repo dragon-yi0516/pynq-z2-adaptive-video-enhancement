@@ -1,0 +1,8 @@
+offset,name,access,width,description
+0x00,MLP_OUTPUT,R,32,MLP classification result
+0x04,MODE_SEL,RW,32,processing mode
+0x08,STATUS,R,32,status bits
+0x0C,VERSION,R,32,IP version
+0x34,PARAM,RW,32,continuous processing parameter
+0x38,QUAD_TL_TR,R,32,quadrant sums TL/TR
+0x3C,QUAD_BL_BR,R,32,quadrant sums BL/BR

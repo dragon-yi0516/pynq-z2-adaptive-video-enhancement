@@ -1,0 +1,70 @@
+{
+  "csv": "C:\\Users\\龙游\\Desktop\\文件\\pynq实验材料\\ai_video_competition\\data\\hard_pairs.csv",
+  "weights": "C:\\Users\\龙游\\Desktop\\文件\\pynq实验材料\\ai_video_competition\\weights\\mlp_weights.h",
+  "u_hi": 0.55,
+  "u_lo": 0.3,
+  "total_overrides": 60,
+  "total_holds": 0,
+  "scenes": [
+    {
+      "round": 0,
+      "name": "uniform_dark",
+      "n": 60,
+      "f_luma_mean": 9.0,
+      "u_mean": 0.1013161764471565,
+      "mlp_counts": {
+        "0": 60
+      },
+      "spatial_counts": {
+        "0": 60
+      },
+      "overrides": 0,
+      "holds": 0
+    },
+    {
+      "round": 1,
+      "name": "dark_window",
+      "n": 60,
+      "f_luma_mean": 8.0,
+      "u_mean": 2.1679019451486665,
+      "mlp_counts": {
+        "0": 60
+      },
+      "spatial_counts": {
+        "1": 60
+      },
+      "overrides": 60,
+      "holds": 0
+    },
+    {
+      "round": 2,
+      "name": "uniform_normal",
+      "n": 60,
+      "f_luma_mean": 99.76666666666667,
+      "u_mean": 0.266607884807779,
+      "mlp_counts": {
+        "2": 60
+      },
+      "spatial_counts": {
+        "2": 60
+      },
+      "overrides": 0,
+      "holds": 0
+    },
+    {
+      "round": 3,
+      "name": "normal_backlight",
+      "n": 60,
+      "f_luma_mean": 116.0,
+      "u_mean": 1.151454091847332,
+      "mlp_counts": {
+        "1": 60
+      },
+      "spatial_counts": {
+        "1": 60
+      },
+      "overrides": 0,
+      "holds": 0
+    }
+  ]
+}

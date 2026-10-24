@@ -1,0 +1,18 @@
+* text=auto
+
+*.sh text eol=lf
+*.tcl text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.v text eol=lf
+*.sv text eol=lf
+*.vhd text eol=lf
+*.ipynb text eol=lf
+
+*.bit binary
+*.hwh binary
+*.png binary
+*.jpg binary
+*.docx binary
+*.pdf binary
+*.npz binary

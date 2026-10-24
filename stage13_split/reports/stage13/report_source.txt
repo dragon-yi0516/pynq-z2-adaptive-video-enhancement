@@ -1,0 +1,6 @@
+project=/home/xu/OV5640_capture_only/bitstream/cv_ov5640/cv_ov5640.xpr
+impl_progress=100%
+impl_status=write_bitstream Complete!
+design=impl_1
+tool_version=2024.2
+generated=2026-10-22 22:28:25

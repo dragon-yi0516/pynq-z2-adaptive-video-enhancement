@@ -1,0 +1,38 @@
+name: offline-checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy
+      - name: Python syntax
+        run: |
+          find lib tools stage08_auto_schedule -name '*.py' -print0 | xargs -0 python -m py_compile
+      - name: Unit tests
+        run: |
+          python lib/test_regs.py
+          python lib/test_hwh.py
+          python lib/test_spatial.py
+      - name: Offline model chain
+        run: python tools/offline_check.py --weights /tmp/mlp_weights.h
+      - name: Data and evaluation
+        run: |
+          python tools/check_features.py data/features.csv --no-fail
+          python tools/eval_rounds.py --no-write
+          python tools/eval_spatial.py --csv data/hard_pairs.csv --no-write
+          python tools/eval_holdout.py --csv data/hard_pairs.csv
+          python tools/eval_holdout.py --csv data/real_scene.csv
+      - name: Notebook JSON
+        run: |
+          find . -name '*.ipynb' -not -path './.git/*' -print0 | xargs -0 -n1 python -m json.tool > /dev/null
