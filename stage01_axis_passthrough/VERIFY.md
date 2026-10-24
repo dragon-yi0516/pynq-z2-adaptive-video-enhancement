@@ -31,11 +31,11 @@ bash /home/xu/OV5640_capture_only/ai_video/build_overlay.sh 1
 
 ## 必须满足（缺一不可）
 
-- [ ] BD 里能看到 `axis_video_proc_0`，且 `v_demosaic_0 → axis_video_proc_0 → axi_vdma_0` 连成一条。
-- [ ] `00_baseline_check.ipynb` 里「自定义 IP 是否存在」变成 **True**。
-- [ ] HDMI 画面和插 IP 之前**完全一致**（这一步 IP 只直通，画面不许有任何变化）。
-- [ ] 没有花屏、没有撕裂、没有颜色错位。
-- [ ] `01_axil_regs.ipynb` 里能抓到 1280x720 的帧。
+- BD 里能看到 `axis_video_proc_0`，且 `v_demosaic_0 → axis_video_proc_0 → axi_vdma_0` 连成一条。
+- `00_baseline_check.ipynb` 里「自定义 IP 是否存在」变成 **True**。
+- HDMI 画面和插 IP 之前**完全一致**（这一步 IP 只直通，画面不许有任何变化）。
+- 没有花屏、没有撕裂、没有颜色错位。
+- `01_axil_regs.ipynb` 里能抓到 1280x720 的帧。
 
 ## 为什么这一步“画面不许变”
 

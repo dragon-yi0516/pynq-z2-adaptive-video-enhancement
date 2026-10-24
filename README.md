@@ -57,6 +57,32 @@ OV5640
 `axi_vdma_0/S_AXIS_S2MM` 之间。这一段是完整的 24-bit RGB 像素流，
 所以处理后的画面既能被 Jupyter 抓取，也能直接送到 HDMI。
 
+## 实现报告
+
+stage13 的原始 Vivado 报告放在 `stage13_split/reports/stage13/`：
+
+| 文件 | 内容 |
+|---|---|
+| `timing_final.rpt` | setup、hold、pulse-width 和关键路径 |
+| `util_final.rpt` | LUT、FF、BRAM、DSP 占用 |
+| `drc_final.rpt` | 布线后的 DRC |
+| `methodology_final.rpt` | 时钟和约束方法学检查 |
+| `report_source.txt` | 工程路径、工具版本、实现状态和生成时间 |
+
+## 目录对照
+
+比赛推荐 `src/`、`sim/`、`build/`、`board/`、`data/`、`skill/`、`report/`。本项目按开发阶段组织，对应关系如下：
+
+| 推荐目录 | 本项目位置 |
+|---|---|
+| `src/` | `stage01..stage13/` 的 `hdl/`、`hls/`、`src/`，以及 `lib/` |
+| `sim/` | `stage05_mlp_hls/src/*_tb.cpp`、`tools/offline_check.py`、`lib/test_*.py` |
+| `build/` | `build_overlay.sh`、`tools/*.tcl`、`bitstream_2024_2/` |
+| `board/` | `stage08..stage13/` 的 Notebook、`overlay/`、`weights/` |
+| `data/` | `data/` 下的训练、holdout、边界、实时和 soak 数据 |
+| `skill/` | 四个可复用 Skill |
+| `report/` | `report/` 和 `docs/` |
+
 ## 快速复现
 
 ### 1. PC 或 Ubuntu 离线检查
@@ -135,7 +161,7 @@ VERSION = 0x0001020D
 * `golden_reference_ci`：逐条比较 Python 参考结果和 HLS/板上输出；
 * `vivado_report_gate`：读取 Vivado 时序和资源报告，按阈值给出 PASS/FAIL。
 
-每个目录的 README 都写了适用场景、用法、失效条件和验证记录。
+每个目录的 README 都写了适用场景、用法、失效条件和验证记录。大模型协作过程见 `report/AI_COLLABORATION_RECORD.md`。
 
 ## 已知问题
 

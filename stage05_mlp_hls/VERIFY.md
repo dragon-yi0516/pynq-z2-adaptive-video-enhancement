@@ -32,13 +32,13 @@ vivado_hls -f script.tcl
 
 ## 必须满足（缺一不可）
 
-- [ ] `csim_design` 通过，打印 `TV_N=124  fail=0` 与
+- `csim_design` 通过，打印 `TV_N=124  fail=0` 与
       `CSIM PASSED: HLS 与 Python 定点参考完全一致`。
       （脚本还会去 csim 的输出目录里搜这个字符串做双保险，找不到就 `exit 1`。）
-- [ ] `csynth_design` 成功，`solution1/syn/report/mlp_engine_csynth.rpt` 里
+- `csynth_design` 成功，`solution1/syn/report/mlp_engine_csynth.rpt` 里
       延迟远小于 1ms（本设计每帧只跑一次，指标非常宽松）。
-- [ ] 导出 IP 出现在 `mlp_engine_prj/solution1/impl/ip/`。
-- [ ] `stage05_mlp_hls/src/mlp_weights.h` 和板子上跑的那份**是同一个文件**
+- 导出 IP 出现在 `mlp_engine_prj/solution1/impl/ip/`。
+- `stage05_mlp_hls/src/mlp_weights.h` 和板子上跑的那份**是同一个文件**
       （重新训练过模型的话，必须重跑第 1 步再综合）。
 
 ## 为什么 csim 是这一阶段唯一的验收标准

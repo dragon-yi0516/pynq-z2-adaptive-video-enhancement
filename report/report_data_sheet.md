@@ -154,6 +154,6 @@ scene0 重采后四象限 `(15,17,16,17)`，u=0.124，MLP/空间都判 0。
 | 空间覆盖/保持（轮询） | 64,412 / 13 |
 | 门限拒绝（轮询） | 63,390 |
 | 卡死/花屏/Allocate/Traceback | 全程未记录 |
-| 温度 | 未采集（镜像无 thermal zone） |
+| 温度 | 本次测试镜像没有 thermal zone，结果不包含温度 |
 
 来源：`docs/results/soak.md`、`tools/soak_test.ipynb` 运行输出。

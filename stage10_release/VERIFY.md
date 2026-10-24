@@ -11,13 +11,13 @@ python stage10_release/export_release.py
 
 ## 必须满足（缺一不可）
 
-- [ ] 终端最后打印 `release 完整性检查通过`。
+- 终端最后打印 `release 完整性检查通过`。
   （如果打印“缺少必需文件”，按提示把 `.bit/.hwh` 或 `weights/mlp_weights.h` 补上。）
-- [ ] `release/` 下六个子目录齐全：`overlay/ notebooks/ weights/ data/ hw/ docs/`。
-- [ ] `release/notebooks/` 里 00~11 共 **13** 个 notebook，编号连续
+- `release/` 下六个子目录齐全：`overlay/ notebooks/ weights/ data/ hw/ docs/`。
+- `release/notebooks/` 里 00~11 共 **13** 个 notebook，编号连续
       （00~09 是各阶段，10 = 阶段 12 连续自适应验证，11 = 阶段 13 分屏验证）。
-- [ ] `release/README.md` 里的文件清单表格有 SHA256。
-- [ ] **别人拿到 release/ 后**：拷到板子、按 README 打开 00 → 09，能跑通。
+- `release/README.md` 里的文件清单表格有 SHA256。
+- **别人拿到 release/ 后**：拷到板子、按 README 打开 00 → 09，能跑通。
 
 ## 为什么必须自动导出 + 校验
 

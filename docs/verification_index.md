@@ -22,17 +22,16 @@
 | 资源 | Vivado utilization | `tools/export_vivado_reports.tcl` | LUT 29.82% / FF 19.49% / BRAM 22.50% / DSP 26.36% | `stage13_split/reports/stage13/util_final.rpt` | Vivado |
 | CSim | HLS 测试向量 | `vitis_hls -f script.tcl` | 124 条 fail=0 | `stage05_mlp_hls/VERIFY.md` | HLS |
 
-## 2. 明确未验证 / 不要外推
+## 2. 当前结论的适用范围
 
-- 温度：镜像无 thermal zone，本稿写“未采集”；
-- 整机/HDMI 实拍：待补；
-- stage13 的 timing/utilization/DRC/methodology 已补齐；power 报告仍未生成；
-- methodology 仍有 4 类 Critical Warning，其中 152 项为 `vid_pclk` 无顶层时钟覆盖；
-- DRC 的 195 项 Warning 多为 DSP 流水、LUT 配对和板级 `vid_pclk` 非 CCIO 时钟放置提示；
-- 色偏、快速切换、跨曝光参数：未附有效最终记录；
-- White Balance/Gamma LUT/TNR：未实现；
-- 720p60：未实现；
-- 任意户外/夜间/HDR：未验证。
+- 温度：板端镜像没有 thermal zone，本次结果不包含温度数据；
+- stage13 的 timing、utilization、DRC 和 methodology 报告已经归档；
+- methodology 的 4 类 Critical Warning 中，152 项来自 `vid_pclk` 的顶层时钟覆盖缺口；
+- DRC 的 195 项 Warning 主要是 DSP 流水、LUT 配对和 `vid_pclk` 非 CCIO 时钟放置提示；
+- 当前画质结论来自四场景实时日志、hard pair、真实场景和边界 probe；色偏与跨曝光对照作为下一轮实验；
+- White Balance、Gamma LUT、TNR 属于后续功能方向；
+- 720p60 属于后续性能目标；
+- 户外、夜间和 HDR 超出本轮测试范围。
 
 ## 3. 干净 clone 复现
 

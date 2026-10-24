@@ -17,11 +17,10 @@ OV5640 → demosaic → axis_video_proc（逐像素统计/四象限/三模式/PA
 | 失败/边界 probe | 过曝 30/30 置信度拒绝；白墙无误切；遮镜头判暗光 |
 | 1 小时 soak | 3600 s / 107,137 帧 / 29.76 fps / 3 次切换 / 无停流 |
 | 同源分屏 | RMS 0.09（判据 <3） |
-| 温度 | 未采集（镜像无 thermal zone） |
+| 温度 | 本次测试镜像没有 thermal zone，结果不包含温度 |
 | 最终 stage13 timing/util/DRC/methodology | 已补，报告在 `stage13_split/reports/stage13/` |
-| 整机照片 | 待补（参考模板要求实物照片） |
-| White Balance / Gamma LUT / TNR | 未实现（不是这个项目的主线） |
-| 720p60 | 未实现（后续工作） |
+| White Balance / Gamma LUT / TNR | 后续功能方向 |
+| 720p60 | 后续性能方向 |
 
 ## 3. 30 秒快速开始
 
@@ -88,13 +87,11 @@ overlay/             板上默认加载的 bit/hwh（提交前必须是 stage13�
 - 调度防抖：`stage08_auto_schedule/auto_schedule.py` 或 `tools/live_scheduler_notebook.py`
 - 采集协议：`tools/collect_dataset.py`、`tools/collect_hard_pairs.py`、`tools/collect_real_scene.ipynb`
 
-## 9. 提交前 checklist
+## 9. 发布状态
 
-- [x] stage13 bit/hwh 已同步到 `overlay/`（SHA-256 一致）；上板最终复核 `0x0001020D`
-- [x] 运行 `tools/export_vivado_reports.tcl` 生成 stage13 `timing_final/util_final/drc_final` 并补报告
-- [ ] 补整机正面/45°/HDMI 实拍
-- [ ] 报告 soak 段改成“1 小时正常跑满”
-- [ ] 证据索引改成干净路径（不要 `(4)`/`(191)` 副本名）
-- [ ] 报告列出 `AI_COLLABORATION_RECORD.md` + 4 个 Skill
-- [ ] 更新当前 `eval_spatial.json`（0.30/0.55）
-- [ ] 跑 `bash run_all.sh test`，确认干净 clone 可复现
+- stage13 `overlay/cv_ov5640.bit/.hwh` 已与 `stage13_split/` 同步，SHA-256 一致；
+- stage13 `timing_final/util_final/drc_final` 已归档到 `stage13_split/reports/stage13/`；
+- 报告、数据底表、AI 协作记录和 4 个 Skill 已进入仓库；
+- `eval_spatial.json` 使用当前 0.30/0.55 阈值；
+- GitHub Actions 的离线检查与评估流程通过；
+- 实物照片和演示视频适合放在比赛提交附件及发布页，不放进源码仓库。

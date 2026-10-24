@@ -39,16 +39,16 @@ bash /home/xu/OV5640_capture_only/ai_video/build_overlay.sh 7
 
 ## 必须满足（缺一不可）
 
-- [ ] `VERSION` 读回 **`0x00010407`**（`0x0001`=家族，`04`=修订，`07`=阶段）。
+- `VERSION` 读回 **`0x00010407`**（`0x0001`=家族，`04`=修订，`07`=阶段）。
       `0x00010207` 是**时序违例、mode2 画面被采坏**的旧版，读到它说明板上还是旧 bitstream。
-- [ ] 写 `MODE_SEL = 0` → 画面整体明显变亮（×1.5，高光会溢出，这是正常的）。
-- [ ] 写 `MODE_SEL = 1` → 暗部变亮、亮部不再死白。
-- [ ] 写 `MODE_SEL = 2` → 边缘变锐（噪点也会被强化，属正常）。
-- [ ] **切换时画面不撕裂**：因为 `mode_active` 只在 tuser（帧边界）重采样。
-- [ ] `MLP_OUTPUT` 仍然可用（阶段 6 的功能没被破坏）。
-- [ ] `FRAME_CNT` 仍在约 27~30/秒 递增（720p30，**不是 60**；
+- 写 `MODE_SEL = 0` → 画面整体明显变亮（×1.5，高光会溢出，这是正常的）。
+- 写 `MODE_SEL = 1` → 暗部变亮、亮部不再死白。
+- 写 `MODE_SEL = 2` → 边缘变锐（噪点也会被强化，属正常）。
+- **切换时画面不撕裂**：因为 `mode_active` 只在 tuser（帧边界）重采样。
+- `MLP_OUTPUT` 仍然可用（阶段 6 的功能没被破坏）。
+- `FRAME_CNT` 仍在约 27~30/秒 递增（720p30，**不是 60**；
       阶段 8 的 60 秒日志里实测 27.4 fps —— 说明加了处理逻辑没拖垮数据通路）。
-- [x] 构建日志里出现 `== 时序收敛：OK ==`（有 `WNS < 0` 就不算通过）。
+- 构建日志里出现 `== 时序收敛：OK ==`（有 `WNS < 0` 就不算通过）。
       ✅ **2026-10-04 最终结果**（`timing_v3.rpt`）：
       **`All user specified timing constraints are met`** —— WNS **+0.134 ns**、
       TNS 0.000、失败端点 **0**（共 54580 个端点）。
@@ -62,7 +62,7 @@ bash /home/xu/OV5640_capture_only/ai_video/build_overlay.sh 7
          内部的 Debayer 插值路径上（16 级逻辑、数据路径 9.939ns）；
       3. 换实现策略重跑：place = `Explore`、route / phys_opt = `AggressiveExplore`
          → **+0.134 ns，全部收敛**。
-- [ ] **`06_mode_manual.ipynb` 的「诊断」格**：三档的“输入亮度(IP 统计)”应当
+- **`06_mode_manual.ipynb` 的「诊断」格**：三档的“输入亮度(IP 统计)”应当
       基本相同（LUMA_SUM/PIXEL_CNT 统计的是**处理前**的像素，模式不该改变它）。
       若某档的输入亮度本身就低，说明是摄像头 AEC 在动，而不是处理逻辑。
 
@@ -138,7 +138,7 @@ md5sum /home/xilinx/jupyter_notebooks/ai_video/overlay/cv_ov5640.bit
 
 因为 HDL 改了，IP 版本同步涨到 **1.6**（`tcl/package_ip.tcl` 与
 `tcl/insert_reconfig.tcl` 两处必须一致），否则工程里可能继续用旧的一份 IP。
-- [ ] **可重复性**（`06_mode_manual.ipynb` 的「复验」格）：同一场景不动，
+- **可重复性**（`06_mode_manual.ipynb` 的「复验」格）：同一场景不动，
       按 `0,1,2,0,1,2` 各抓一帧，同一个模式两次读到的均值差异 ≤ 6 灰度。
 
   为什么必须加这一条：三种模式图是**先后三次**抓的，中间隔着不同时间。

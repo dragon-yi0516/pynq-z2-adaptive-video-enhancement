@@ -5,17 +5,17 @@
 
 ## 0. 演示前 10 分钟
 
-- [ ] PYNQ-Z2 上电，网线插好，能进 Jupyter
-- [ ] HDMI 线接 PYNQ-Z2 → 显示器，显示器输入源切到正确的那路
-- [ ] 板子上 `/home/xilinx/jupyter_notebooks/ai_video_2024.2/` 完整（有 `overlay/ weights/ data/ tools/ lib/`）
-- [ ] Jupyter 里**只开一个** notebook；其它全部 shutdown
-- [ ] 终端里 `pkill -f auto_schedule.py`，确保没有残留进程
-- [ ] 板子时间对一下：`sudo date -s "2026-10-13 16:00"`（日志时间会和现实一致，报告好引用）
-- [ ] **权重与 bit 一致性**：`python3 tools/check_weight_sync.py` → **必须 0 退出码**
+- PYNQ-Z2 上电，网线插好，能进 Jupyter
+- HDMI 线接 PYNQ-Z2 → 显示器，显示器输入源切到正确的那路
+- 板子上 `/home/xilinx/jupyter_notebooks/ai_video_2024.2/` 完整（有 `overlay/ weights/ data/ tools/ lib/`）
+- Jupyter 里**只开一个** notebook；其它全部 shutdown
+- 终端里 `pkill -f auto_schedule.py`，确保没有残留进程
+- 板子时间对一下：`sudo date -s "2026-10-13 16:00"`（日志时间会和现实一致，报告好引用）
+- **权重与 bit 一致性**：`python3 tools/check_weight_sync.py` → **必须 0 退出码**
       （否则板上跑的是旧权重，你看到的所有判决都不作数）
-- [ ] **门限自检**：`python3 -c "import sys;sys.path.insert(0,'.');from lib import adaptive as a;print(a.CLASS_STATS_SOURCE, a.NN_SIGMA_MAX, a.CONFIDENCE_BY_CLASS)"`
+- **门限自检**：`python3 -c "import sys;sys.path.insert(0,'.');from lib import adaptive as a;print(a.CLASS_STATS_SOURCE, a.NN_SIGMA_MAX, a.CONFIDENCE_BY_CLASS)"`
       → 应打印 `features.csv 12.0 {0: …}`（说明三板斧都在）
-- [ ] `Restart Kernel`；跑演示 notebook 的初始化格后，**确认打印了这两行**：
+- `Restart Kernel`；跑演示 notebook 的初始化格后，**确认打印了这两行**：
       ```
       [exposure] 已切手动：曝光 = 736 行，增益码 = 0x20（0x3503 = 0x03）
       VERSION = 0x0001030C  (阶段 12)          # 若重出过阶段 13 则为 0x0001020D
@@ -23,7 +23,7 @@
       ⚠️ **没有第一行就是没锁曝光** —— 特征会整体偏移，逆光档根本判不出来。
       画面太暗看不清时临时把初始化格的 `USE_MANUAL_EXPOSURE` 改成 `False`，
       但那样只能"看画面"，不能用来验收/答辩。
-- [ ] 屏幕上**已有实时画面**（第 3 幕的看点就是画面自动切换，黑屏等于白演）
+- 屏幕上**已有实时画面**（第 3 幕的看点就是画面自动切换，黑屏等于白演）
 
 ## 1. 开场（30 秒）
 
@@ -128,8 +128,8 @@
 
 ## 9. 收尾
 
-- [ ] `pkill -f auto_schedule.py`
-- [ ] `Restart Kernel`（或重新加载 overlay）
-- [ ] 关掉 notebook，避免下次演示前忘了释放 DMA
-- [ ] 中断过采集格的话，重启板子再收工（避免下次上台第一格就 Allocate failed）
-- [ ] 把 `sched.log` / `data/step5_compare.csv` 抄进报告
+- `pkill -f auto_schedule.py`
+- `Restart Kernel`（或重新加载 overlay）
+- 关掉 notebook，避免下次演示前忘了释放 DMA
+- 中断过采集格的话，重启板子再收工（避免下次上台第一格就 Allocate failed）
+- 把 `sched.log` / `data/step5_compare.csv` 抄进报告

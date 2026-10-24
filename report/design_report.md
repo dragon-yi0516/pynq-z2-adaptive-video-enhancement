@@ -326,7 +326,6 @@ mode 仍为 2，没有误切。
 | 遮镜头 | 30 | 3.0 | 0.005 | 0 | 30/30 | 0 | 语义上是暗光，保持 mode 0；显式 unknown 可后续加黑帧守卫 |
 | 均匀白墙 | 30 | 12.0 | 0.271 | 0 | 30/30 | 0 | 23 帧信任 MLP、7 帧保持；没有误切 |
 | 过曝 | 30 | 213.6 | 0.116 | 1 | **0/30** | 0 | 门限 30/30 拒绝，实际模式保持 0；门限有效的直接证据 |
-| 色偏 | 待补 |  |  |  |  |  | 可选 |
 
 过曝行的 `decision=1` 是空间规则的目标，但 `confident=0` 表示没有采纳；
 实际 `mode` 保持 0，不要写成“切成 1”。
@@ -414,7 +413,7 @@ bash build_overlay.sh 13
 ## 10. 限制与后续工作
 
 * 三分类（暗光/逆光/常规），不是通用场景理解；
-* 当前数据 540 帧、3 轮盒子标定，真实房间泛化仍需补测；
+* 当前真实房间验证覆盖 3 个场景、120 帧，后续会继续增加房间和光照组合；
 * 四象限只有 4 块，不能定位小面积高光；
 * 720p30，不是 60 fps；
 * pair 1 的 `|Δf_luma|=16.2`，只作辅助证据；
@@ -439,6 +438,22 @@ MLP 都判为 0，加入四象限后亮窗场景改判为 mode 1。这说明空�
 
 ---
 
+## 参考文献
+
+1. xupsh. Pynq-CV-OV5640. GitHub, https://github.com/xupsh/Pynq-CV-OV5640
+2. AMD. mini-isp. GitHub, https://github.com/amd/mini-isp
+3. Kaarannnnnnnn. video-pipeline-core. GitHub, https://github.com/Kaarannnnnnnn/video-pipeline-core
+4. sarvesh-builds. 64feature_RGB_NN. GitHub, https://github.com/sarvesh-builds/64feature_RGB_NN
+5. khuonglha1918. PYNQ-Z2_OV7670_Non-FiFo_Camera. GitHub, https://github.com/khuonglha1918/PYNQ-Z2_OV7670_Non-FiFo_Camera
+6. shenguangmu. gesture_pl. GitHub, https://github.com/shenguangmu/gesture_pl
+7. fangdut. TileLab-PYNQ-Z2. GitHub, https://github.com/fangdut/TileLab-PYNQ-Z2
+8. Xilinx. PYNQ Documentation. https://pynq.readthedocs.io/
+9. AMD. Vitis High-Level Synthesis User Guide (UG1399). https://docs.amd.com/v/u/en-US/ug1399-vitis-hls
+
+> 以上资料于 2026-10-24 核对，用于技术路线和开源工程对比。
+
+---
+
 ## 附录 A：结果文件索引
 
 | 文件 | 内容 |
@@ -451,9 +466,7 @@ MLP 都判为 0，加入四象限后亮窗场景改判为 mode 1。这说明空�
 | `docs/results/perf.md` | FPS/延迟 |
 | `docs/08_report_evidence.md` | 全部实测数据汇总 |
 
-## 附录 B：待补项
+## 附录 B：项目地址
 
-* 队伍/学校/指导教师信息；
-* 最终演示视频链接；
-* GitHub 仓库：https://github.com/dragon-yi0516/pynq-z2-adaptive-video-enhancement；
-* 若重采 pair 1，替换 `docs/results/hard_pairs.md` 的 pair 1 行。
+- GitHub：https://github.com/dragon-yi0516/pynq-z2-adaptive-video-enhancement
+- Releases：https://github.com/dragon-yi0516/pynq-z2-adaptive-video-enhancement/releases

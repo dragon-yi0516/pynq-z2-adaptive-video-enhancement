@@ -33,7 +33,7 @@ sudo -E env PATH="$PATH" python3 stage08_auto_schedule/auto_schedule.py \
 | 空间保持（轮询计数） | 13 |
 | 门限拒绝（轮询计数） | 63,390 |
 | 最终 mode / PARAM | **1 / 138** |
-| 温度 | 未采集（镜像没有 thermal zone） |
+| 温度 | 本次测试镜像没有 thermal zone，结果不包含温度 |
 | 卡死 / 花屏 / Allocate failed / Traceback | **均未记录** |
 
 ## 关于 CSV 的最后一行
@@ -52,6 +52,6 @@ sudo -E env PATH="$PATH" python3 stage08_auto_schedule/auto_schedule.py \
 
 > 系统在 stage13（0x0001020D）上连续运行 3600 s，共处理 107,137 帧，
 > 平均 29.76 fps；全程未记录卡死、花屏、Allocate failed、Traceback 或停流。
-> 运行中发生 3 次模式切换，最终 mode 1 / PARAM 138。温度因镜像无 thermal zone 未采集。
+> 运行中发生 3 次模式切换，最终 mode 1 / PARAM 138。测试镜像没有 thermal zone，本次结果不包含温度。
 
 日志中 `overrides/rejects` 是轮询计数，不是帧数，也不代表振荡。
