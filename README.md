@@ -56,7 +56,8 @@ OV5640 -> v_vid_in_axi4s -> v_demosaic
 ### 1）PC / Ubuntu：离线自检（不需要板子）
 
 ```bash
-cd ai_video_competition
+git clone https://github.com/dragon-yi0516/pynq-z2-adaptive-video-enhancement.git
+cd pynq-z2-adaptive-video-enhancement
 bash run_all.sh test
 ```
 

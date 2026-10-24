@@ -398,7 +398,8 @@ mode 仍为 2，没有误切。
 ### 9.2 离线自检
 
 ```bash
-cd ai_video_competition
+git clone https://github.com/dragon-yi0516/pynq-z2-adaptive-video-enhancement.git
+cd pynq-z2-adaptive-video-enhancement
 bash run_all.sh test
 ```
 
