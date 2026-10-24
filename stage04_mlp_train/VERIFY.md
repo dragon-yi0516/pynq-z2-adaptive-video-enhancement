@@ -20,7 +20,7 @@ python tools/offline_check.py
 
 这一步会用 `make_demo_csv.py` 造的三类数据把
 「训练 -> 量化 -> C 头文件 -> 回读校验 -> 定点推理」整条链路走一遍。
-**本工程的这份 offline_check 已经跑通，结果：**
+**当前项目的这份 offline_check 已经跑通，结果：**
 
 ```
 浮点训练准确率 = 1.0000

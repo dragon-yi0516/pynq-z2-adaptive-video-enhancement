@@ -4,7 +4,7 @@
 
 | 文件 | 用途 | 备注 |
 |---|---|---|
-| `architecture.png` | 系统架构图 | 来自上游 Pynq-CV-OV5640；建议按本工程重画，标出 `axis_video_proc` 和四象限 |
+| `architecture.png` | 系统架构图 | 来自上游 Pynq-CV-OV5640；建议按当前项目重画，标出 `axis_video_proc` 和四象限 |
 | `system_diagram.png` | 板卡/摄像头/HDMI 连接示意 | 来自上游工程；现场照片更好 |
 
 ## 建议补拍/补画

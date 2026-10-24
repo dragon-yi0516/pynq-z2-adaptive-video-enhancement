@@ -187,7 +187,7 @@ ol, iic, demosaic, vdma0, vdma1, mode = vs.bring_up(
 
 ```python
 from lib import exposure
-exposure.set_manual(iic, **exposure.WORKPOINT)      # 本工程标定的工作点
+exposure.set_manual(iic, **exposure.WORKPOINT)      # 当前项目标定的工作点
 ```
 
 演示顺序建议：

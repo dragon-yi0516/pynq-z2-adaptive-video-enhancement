@@ -4,7 +4,7 @@
 
 ## 跑之前
 
-把本工程目录（`ai_video/`）拷到板子的 `/home/xilinx/jupyter_notebooks/` 下，
+把当前项目目录（`ai_video/`）拷到板子的 `/home/xilinx/jupyter_notebooks/` 下，
 并确保 `ai_video/overlay/cv_ov5640.bit` + `.hwh` 就是你现在能出图的那一版。
 
 ## 跑
@@ -15,7 +15,7 @@
 
 - `IP 列表` 打印出来了，并且至少包含
       `axi_iic_0`、`axi_vdma_0`、`axi_vdma_1`、`v_demosaic_0`、`v_tc_0`、`rgb2dvi_0`。
-- 脚本自动判定并打印：当前 overlay **是/不是** 本工程自己生成的。
+- 脚本自动判定并打印：当前 overlay **是/不是** 当前项目生成的。
 - 打印出「有 AXI-Lite 接口的 IP」清单（后面阶段要控制的就是这一类）。
 - `ai_video/data/baseline.json` 生成成功，里面记录了 `.bit` / `.hwh` 的 SHA256。
 - 终端明确告诉你下一步该做什么（阶段 1 或先生成 overlay）。

@@ -102,5 +102,5 @@ vivado -mode batch -source <原始工程的 build_bitstream.tcl>
 ## 许可与致谢
 
 基础 BD、`rgb2dvi`、OV5640 配置表来自开源工程 `Pynq-CV-OV5640`（BSD-3-Clause）。
-本工程新增部分：`axis_video_proc`（Verilog）、`mlp_engine`（Vitis HLS）、
+当前项目新增部分：`axis_video_proc`（Verilog）、`mlp_engine`（Vitis HLS）、
 以及全部 Jupyter 流程与训练/量化工具链。

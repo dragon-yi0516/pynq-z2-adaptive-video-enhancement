@@ -102,7 +102,7 @@ Python 侧 `mlp_features()` / HDL 侧 `reg_f1_r/reg_f2_r/reg_f3_r` 必须一致�
 
 ## 为什么没有“真正的 VBlank”
 
-本工程里自定义 IP 挂在纯 AXI4-Stream 像素流上（`demosaic -> IP -> VDMA0`），
+当前项目里自定义 IP 挂在纯 AXI4-Stream 像素流上（`demosaic -> IP -> VDMA0`），
 这条流里**没有**独立的 `vsync/vblank` 信号，只有：
 
 * `tuser` = 一帧的第一个像素（帧起始）

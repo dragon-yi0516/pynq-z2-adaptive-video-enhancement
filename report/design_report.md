@@ -362,7 +362,7 @@ mode 仍为 2，没有误切。
 
 | Skill | 适用场景 | 已验证 |
 |---|---|---|
-| `pynq_overlay_preflight` | overlay/IP/VERSION/VDMA 上板前检查 | 本工程 stage13 overlay |
+| `pynq_overlay_preflight` | overlay/IP/VERSION/VDMA 上板前检查 | 当前项目 stage13 overlay |
 | `axil_register_contract` | 寄存器表 → Python 封装 + HDL 地址检查 | 抓到 `PARAM` 地址 0x0D/0x34 错误 |
 | `golden_reference_ci` | Python 参考 vs HLS/板上输出逐条比对 | 124 条 CSim 向量 |
 
@@ -405,7 +405,7 @@ bash build_overlay.sh 13
 
 ### 9.5 目录对照
 
-推荐目录 `src/sim/build/board/data/skill/report` 与本工程的对应关系
+推荐目录 `src/sim/build/board/data/skill/report` 与当前项目的对应关系
 见顶层 `README.md` 的“目录对照”表。
 
 ---

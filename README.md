@@ -21,6 +21,16 @@ VDMA 送入 DDR，最后通过 HDMI 显示。PL 负责逐像素统计和图像�
 
 ![PYNQ-Z2 系统连接示意图](report/assets/system_diagram.png)
 
+## 运行所需的硬件
+
+- PYNQ-Z2（XC7Z020）开发板；
+- 带 9×2 接口的 OV5640 摄像头模块，接线见 `bitstream_2024_2/cv_ov5640.xdc`；
+- 支持 1280×720 的 HDMI 显示器；
+- 网线和可运行 Jupyter Notebook 的电脑；
+- PYNQ-Z2 电源。
+
+摄像头和 HDMI 的具体连接方式同时整理在 `report/assets/system_diagram.png` 与 `docs/04_demo_box.md`。
+
 ## 当前完成情况
 
 | 项目 | 实测结果 |

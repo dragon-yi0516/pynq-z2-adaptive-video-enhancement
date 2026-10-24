@@ -4,7 +4,7 @@
 
 ```
 OV5640_capture_only/                 <-- 这就是 /home/xu/OV5640_capture_only
-├── ai_video/                        <-- 本工程（我改好的这套）
+├── ai_video/                        <-- 当前项目（我改好的这套）
 │   ├── build_overlay.sh             <-- 一键入口：bash build_overlay.sh 1
 │   ├── tools/
 │   │   ├── stage_flow.tcl           建基础BD -> 打包IP -> 插BD -> 出bitstream
