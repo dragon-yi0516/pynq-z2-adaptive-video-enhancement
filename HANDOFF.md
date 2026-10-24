@@ -20,7 +20,7 @@ OV5640 → demosaic → axis_video_proc（逐像素统计/四象限/三模式/PA
 | 温度 | 未采集（镜像无 thermal zone） |
 | 最终 stage13 timing/util/DRC/methodology | 已补，报告在 `stage13_split/reports/stage13/` |
 | 整机照片 | 待补（参考模板要求实物照片） |
-| White Balance / Gamma LUT / TNR | 未实现（不是本作品主线） |
+| White Balance / Gamma LUT / TNR | 未实现（不是这个项目的主线） |
 | 720p60 | 未实现（后续工作） |
 
 ## 3. 30 秒快速开始
@@ -52,7 +52,7 @@ stage00..13/         分阶段 HDL/HLS/notebook/VERIFY
 stage13_split/       最终 stage13 bit/hwh 与分屏验证
 data/                特征、hard pair、真实场景、失败场景、live、soak
 docs/                设计说明、寄存器、结果页
-report/              报告草稿、数据底表、AI 协作记录、审阅
+report/              报告正文、数据底表、AI 协作记录
 skill/               4 个通用 PYNQ Skill
 overlay/             板上默认加载的 bit/hwh（提交前必须是 stage13）
 ```
@@ -60,7 +60,7 @@ overlay/             板上默认加载的 bit/hwh（提交前必须是 stage13�
 ## 6. 证据在哪
 
 - 总数据底表：`report/report_data_sheet.md`
-- 报告审阅：`report/REPORT_REVIEW_20261021.md`
+- 实现限制：`docs/results/timing.md`
 - AI 协作：`report/AI_COLLABORATION_RECORD.md`
 - 结果页：`docs/results/`
 - 验证索引：`docs/verification_index.md`
