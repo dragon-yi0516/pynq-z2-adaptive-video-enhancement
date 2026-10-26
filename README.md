@@ -29,7 +29,7 @@ VDMA 送入 DDR，最后通过 HDMI 显示。PL 负责逐像素统计和图像�
 - 网线和可运行 Jupyter Notebook 的电脑；
 - PYNQ-Z2 电源。
 
-摄像头和 HDMI 的具体连接方式同时整理在 `report/assets/system_diagram.png` 与 `docs/04_demo_box.md`。
+摄像头和 HDMI 的具体连接方式同时整理在 `report/assets/system_diagram.png` 与 `docs/04_demo_box.md`。拍照和演示视频的机位、构图与 60 秒分镜见 `docs/demo_capture_guide.md`。
 
 ## 当前完成情况
 
