@@ -35,4 +35,4 @@ report_handoff*.zip
 参考文档.docx
 
 # Preserve the final soak evidence log
-!soak.log
+!data/soak.log

@@ -5,7 +5,7 @@
   -> 帧边界写 MODE_SEL -> 连续 PARAM
 
 额外：每 heartbeat 秒写一条心跳（FRAME_CNT/FPS/特征/u/mode/param/温度）
-到 soak.log 和 data/soak.csv；Ctrl+C 可提前结束并保留数据。
+到 data/soak.log 和 data/soak.csv；Ctrl+C 可提前结束并保留数据。
 """
 import csv
 import os
@@ -55,7 +55,7 @@ def _write_csv(path, rows):
 def run_soak(regs, duration=3600.0, heartbeat=60.0, poll=0.02,
              debounce=6, min_hold=1.0, param_step=2, log_path=None):
     """跑 soak；返回 summary dict。Ctrl+C 可提前结束。"""
-    log_path = log_path or os.path.join(ROOT, "soak.log")
+    log_path = log_path or os.path.join(ROOT, "data/soak.log")
     os.makedirs(os.path.dirname(os.path.abspath(log_path)), exist_ok=True)
     csv_path = os.path.join(ROOT, "data", "soak.csv")
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)

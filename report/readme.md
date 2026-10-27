@@ -6,10 +6,10 @@
 |---|---|
 | `design_report.md` | 当前设计报告正文，新的叙述和结论已更新到这个文件 |
 | `report_data_sheet.md` | 主要实测数据、来源和口径，写报告时优先从这里取数 |
-| `AI_COLLABORATION_RECORD.md` | 大模型协作过程，包括问题、修改、验证和 Skill 提炼 |
+| `ai_collaboration_record.md` | 大模型协作过程，包括问题、修改、验证和 Skill 提炼 |
 | `llm_collaboration.md` | 较早的精简版协作记录，可作为补充材料 |
-| `MODEL_CARD.md` | MLP 的输入、输出、数据、指标和限制 |
-| `RELATED_WORK.md` | 与 mini-ISP、video-pipeline-core 等公开工程的对比 |
+| `model_card.md` | MLP 的输入、输出、数据、指标和限制 |
+| `related_work.md` | 与 mini-ISP、video-pipeline-core 等公开工程的对比 |
 | `assets/` | 架构图、系统连接图和画图脚本 |
 
 ## 写作口径

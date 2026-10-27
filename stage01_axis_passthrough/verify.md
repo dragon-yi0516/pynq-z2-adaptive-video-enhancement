@@ -23,7 +23,7 @@ bash /home/xu/OV5640_capture_only/ai_video/build_overlay.sh 1
 成功标志：最后打印 `#  阶段 1 全部完成`，且 `ai_video/overlay/cv_ov5640.bit` 是刚刚生成的时间。
 完整日志在 `ai_video/logs/stage1_<时间戳>.log`。
 
-分步跑法、`clean` 参数、环境变量覆盖等见 `ai_video/README_RUN.md`。
+分步跑法、`clean` 参数、环境变量覆盖等见 `docs/run_guide.md`。
 
 ## 板上（Jupyter）
 

@@ -2,7 +2,7 @@
 
 这份记录按“提示词 → 模型回答（摘要）→ 实际结果 → 自我纠错 → 验证 → 沉淀 Skill”
 整理。内容来自当前项目真实的调试过程；提示词为当时的意图复述，数字和现象来自
-`README_2024.2.md`、`docs/05_optimization_plan.md`、`docs/07_recollect_and_gate.md`
+`docs/migration_2024_2.md`、`docs/05_optimization_plan.md`、`docs/07_recollect_and_gate.md`
 和板上日志。
 
 ## 工作流

@@ -300,7 +300,7 @@ module axis_video_proc #(
     reg         mlp_start_r;
     reg         mlp_done_d;
     // 诊断用计数器：看「发出过几次 start」和「收到过几次 done」，
-    // 就能判断卡在哪一环（见 stage06 的 VERIFY.md 里的排查表）。
+    // 就能判断卡在哪一环（见 stage06 的 verify.md 里的排查表）。
     reg  [31:0] reg_mlp_start_cnt;
     reg  [31:0] reg_mlp_done_cnt;
     // AXI 读 STATUS 时产生的 1 拍清除脉冲（在下面第 7 节里驱动）

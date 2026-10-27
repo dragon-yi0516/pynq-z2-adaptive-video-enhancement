@@ -1,4 +1,4 @@
-# HANDOFF：第一次打开先看这里
+# 开发交接说明
 # 基于 PYNQ-Z2 的场景自适应视频增强系统
 
 ## 1. 这是什么
@@ -60,10 +60,10 @@ overlay/             板上默认加载的 bit/hwh（提交前必须是 stage13�
 
 - 总数据底表：`report/report_data_sheet.md`
 - 实现限制：`docs/results/timing.md`
-- AI 协作：`report/AI_COLLABORATION_RECORD.md`
+- AI 协作：`report/ai_collaboration_record.md`
 - 结果页：`docs/results/`
 - 验证索引：`docs/verification_index.md`
-- 技能包：`skill/README.md`
+- 技能包：`skill/readme.md`
 
 ## 7. 已知问题 / 不要误读
 
@@ -74,7 +74,7 @@ overlay/             板上默认加载的 bit/hwh（提交前必须是 stage13�
   另有 clk_wiz 重复主时钟 2 项和 rgb2dvi SerialClk 1 项。报告里必须如实写这个边界。
 - DRC 为 0 Error / 0 Critical Warning，但有 195 个 Warning；主要是 DSP 流水建议、
   LUT 配对布局和 `vid_pclk` 非 CCIO 时钟放置提示。
-- `soak.csv` 只有 59 条心跳（60–3540 s），3600 s 总结在 `soak.log`；
+- `soak.csv` 只有 59 条心跳（60–3540 s），3600 s 总结在 `data/soak.log`；
   107,137 是总帧增量，不是最终绝对帧计数；没有“末尾停流”。
 - 四象限只有 4 块，不能定位小面积高光。
 - 3 类、540 帧盒子数据；真实场景 120 帧只代表本次 3 个场景。

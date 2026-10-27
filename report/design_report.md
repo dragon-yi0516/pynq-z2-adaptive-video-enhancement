@@ -284,7 +284,7 @@ pair 1 的亮度差 16.2，只作辅助证据。
 
 | 验证 | 结果 | 出处 |
 |---|---|---|
-| HLS CSim | 124 条测试向量，`fail=0` | `stage05_mlp_hls/VERIFY.md` |
+| HLS CSim | 124 条测试向量，`fail=0` | `stage05_mlp_hls/verify.md` |
 | Python 定点参考 | 与 HLS 逐条一致 | `tools/offline_check.py` |
 | 权重/bit 同步 | 三者指纹一致 | `tools/check_weight_sync.py` |
 | 分屏自洽 | 同帧 RMS **0.09**（<3） | `docs/08_report_evidence.md` |
@@ -293,7 +293,7 @@ pair 1 的亮度差 16.2，只作辅助证据。
 | 数据体检 | 0 FAIL / 5 WARN | `tools/check_features.py` |
 
 > soak 说明：总运行 3600 s、总帧增量 107,137、平均 29.76 fps、切换 3 次。
-> `soak.csv` 的 59 条心跳覆盖 60～3540 s，3600 s 总结在 `soak.log` 末行；
+> `soak.csv` 的 59 条心跳覆盖 60～3540 s，3600 s 总结在 `data/soak.log` 末行；
 > 按启动计数约 938 换算，最后 60 s 增帧约 1,785～1,786，与 29.76 fps 一致。
 > 日志无停流、Allocate failed 或 Traceback，运行结束后由用户手动关闭 kernel。
 
@@ -334,7 +334,7 @@ mode 仍为 2，没有误切。
 
 ## 7. 大模型协作
 
-详见 `report/AI_COLLABORATION_RECORD.md`（完整版，含第 4 章结构与
+详见 `report/ai_collaboration_record.md`（完整版，含第 4 章结构与
 12 条交互索引）；精简版见 `report/llm_collaboration.md`。这里只列 7 个 episode：
 
 1. 2024.2 迁移的四个坑（工程已打开、`.hwh` 路径、重复地址段、时钟频率）；
@@ -358,7 +358,7 @@ mode 仍为 2，没有误切。
 
 ## 8. 技能包
 
-详见 `skill/README.md`。
+详见 `skill/readme.md`。
 
 | Skill | 适用场景 | 已验证 |
 |---|---|---|
@@ -406,7 +406,7 @@ bash build_overlay.sh 13
 ### 9.5 目录对照
 
 推荐目录 `src/sim/build/board/data/skill/report` 与当前项目的对应关系
-见顶层 `README.md` 的“目录对照”表。
+见仓库根目录的 `directory.md`。
 
 ---
 

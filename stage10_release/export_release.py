@@ -182,7 +182,7 @@ def main():
             copied.append(("docs/" + os.path.basename(rel), src))
 
     # ---- README -----------------------------------------------------------
-    tpl = os.path.join(HERE, "README_TEMPLATE.md")
+    tpl = os.path.join(HERE, "readme_template.md")
     with open(tpl, encoding="utf-8") as f:
         text = f.read()
 

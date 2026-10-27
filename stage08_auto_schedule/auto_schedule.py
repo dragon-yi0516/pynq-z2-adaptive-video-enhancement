@@ -285,7 +285,7 @@ def run_loop(args, log, regs):
 
     # 前 1 秒先读一遍基线，避免刚启动就误切。
     # 流没起来的话这里会超时：记一笔继续跑，别让脚本在这里退出 ——
-    # 退出就没有收尾行，日志会被判成"脚本没跑完"（判分依据见 VERIFY.md）。
+    # 退出就没有收尾行，日志会被判成"脚本没跑完"（判分依据见 verify.md）。
     try:
         regs.wait_new_frame()
     except TimeoutError as e:
@@ -420,7 +420,7 @@ def run_loop(args, log, regs):
             # ---- 诊断：心跳 + 流停了没有 + 画面一直没变 ------------------
             # 为什么要有这几行：板子上出现过「MLP_OUTPUT 一直是 0」的情况，
             # 光看这一行分不清是「画面真的黑」还是「链路卡住」。把特征和
-            # FRAME_CNT 一起写进日志，事后翻日志就能定位（见 VERIFY.md）。
+            # FRAME_CNT 一起写进日志，事后翻日志就能定位（见 verify.md）。
             now = time.time()
             if next_hb and now >= next_hb:
                 next_hb = now + hb

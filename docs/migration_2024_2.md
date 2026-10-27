@@ -33,9 +33,9 @@ source $base_tcl                                          ;# 建基础 Block Des
 
 ```
 ai_video_2024.2/
-├── README_2024.2.md          ← 你正在看的这份
+├── docs/migration_2024_2.md          ← 你正在看的这份
 ├── README.md                 ← 原工程总览（版本号已更新）
-├── README_RUN.md             ← 原工程跑法（命令已更新）
+├── docs/run_guide.md             ← 原工程跑法（命令已更新）
 ├── build_overlay.sh          ← ★ 已升级：自动 source 2024.2 环境
 ├── tools/                    ← ★ 已升级：建基础BD/打包IP/插BD/出bitstream
 ├── stage00_baseline/ ~ stage11_demo/
@@ -65,7 +65,7 @@ ai_video_2024.2/
 | 4 | `tools/build_and_copy.tcl` | `-jobs 4` 写死 | 支持 `export VIVADO_JOBS=8` |
 | 5 | `stage05_mlp_hls/hls/script.tcl` | 注释写 `vivado_hls`；`export_design` 不带 `-rtl` | 改用 `vitis_hls`；`export_design -rtl verilog -format ip_catalog` |
 | 6 | `tools/package_ip_common.tcl`、`tools/insert_axis_video_proc_common.tcl` | 调 `ipx::*` / `create_bd_cell` 等 | API 在 2024.2 仍在，逻辑不变；只更新版本说明（**这两块需要实跑验证**，见第 8 节） |
-| 7 | 各处文档 / VERIFY.md / notebook 文字 | 通篇 2018.3 | 全部更新为 2024.2 |
+| 7 | 各处文档 / verify.md / notebook 文字 | 通篇 2018.3 | 全部更新为 2024.2 |
 | 8 | `bitstream_2024_2/ip_repo/` | 原来指向 `boards/src/ip` | 自带一份 rgb2dvi + tmds，不再依赖旧仓库路径 |
 
 ### 2.1 2024.2 实跑暴露出来的问题（已修）
@@ -199,7 +199,7 @@ ol, iic, ... = vs.bring_up(ROOT, manual_exposure=dict(exposure=512, gain=0x10))
 
 ## 3. 放到虚拟机的哪里
 
-原工程的 VM 布局是这样（`README_RUN.md` 里写的）：
+原工程的 VM 布局是这样（`docs/run_guide.md` 里写的）：
 
 ```
 /home/xu/OV5640_capture_only/

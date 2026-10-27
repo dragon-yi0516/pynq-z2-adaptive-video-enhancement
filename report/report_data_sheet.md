@@ -96,7 +96,7 @@ Pair 1：`|Δf_luma|=16.2`（WARN），`|Δu|=0.885`，MLP 2/1，空间 2/1（�
 
 | 验证 | 结果 | 出处 |
 |---|---|---|
-| HLS CSim | 124 条，`fail=0` | `stage05_mlp_hls/VERIFY.md` |
+| HLS CSim | 124 条，`fail=0` | `stage05_mlp_hls/verify.md` |
 | Python 定点参考 | 与 HLS 逐条一致 | `tools/offline_check.py` |
 | 权重/bit 同步 | 三者指纹一致 | `tools/check_weight_sync.py` |
 | 分屏自洽 | 同帧 RMS 0.09（<3） | `docs/08_report_evidence.md` |

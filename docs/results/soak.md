@@ -9,14 +9,14 @@
 3. 跑 `soak.run_soak(regs, duration=3600, heartbeat=60)`；
 4. 跑 `soak.summary(result)`。
 
-会写 `soak.log` 和 `data/soak.csv`，每 60 秒一条心跳和一条 CSV 记录。
+会写 `data/soak.log` 和 `data/soak.csv`，每 60 秒一条心跳和一条 CSV 记录。
 
 ## 方式 B：终端
 
 ```bash
 sudo -E env PATH="$PATH" python3 stage08_auto_schedule/auto_schedule.py \
   --adaptive --duration 3600 --heartbeat 60 --min-hold 2.0 \
-  --log soak.log
+  --log data/soak.log
 ```
 
 运行期间可以缓慢改变场景；不要动 HDL/overlay。
@@ -41,7 +41,7 @@ sudo -E env PATH="$PATH" python3 stage08_auto_schedule/auto_schedule.py \
 `data/soak.csv` 的 `frame_cnt` 是**绝对帧计数**，不是本次运行的增量。
 
 - CSV 最后一行：`t=3540, frame_cnt=106290`
-- `soak.log` 最终总结：`t=3600, frames=107137`
+- `data/soak.log` 最终总结：`t=3600, frames=107137`
 - 其中 `107137` 是 `frame1 - frame0` 的**总处理帧增量**
 
 因此不能直接用 `107137 - 106290 = 847` 当作最后一分钟增量。按启动计数约 938

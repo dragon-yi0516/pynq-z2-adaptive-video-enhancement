@@ -5,6 +5,8 @@ OV5640 采集到的画面会经过去马赛克和自建的 AXI4-Stream 处理 IP
 VDMA 送入 DDR，最后通过 HDMI 显示。PL 负责逐像素统计和图像处理，PS 负责
 判断场景并调整参数。
 
+完整的源码、构建、板端、数据、Skill 和报告路径对照见 [directory.md](directory.md)。
+
 ## 我为什么做这个
 
 摄像头自带的 AEC/AGC 主要按整幅画面调亮度。在窗边逆光这种场景里，
@@ -81,7 +83,7 @@ stage13 的原始 Vivado 报告放在 `stage13_split/reports/stage13/`：
 
 ## 目录对照
 
-比赛推荐 `src/`、`sim/`、`build/`、`board/`、`data/`、`skill/`、`report/`。本项目按开发阶段组织，对应关系如下：
+比赛推荐 `src/`、`sim/`、`build/`、`board/`、`data/`、`skill/`、`report/`。本项目按开发阶段组织；下面先给总览，逐文件说明见 [directory.md](directory.md)。
 
 | 推荐目录 | 本项目位置 |
 |---|---|
@@ -120,7 +122,7 @@ bash build_overlay.sh 13
 ```
 
 重新生成的文件会放到 `overlay/cv_ov5640.bit` 和
-`overlay/cv_ov5640.hwh`。迁移和踩坑记录在 `README_2024.2.md`。
+`overlay/cv_ov5640.hwh`。迁移和踩坑记录在 `docs/migration_2024_2.md`。
 
 ### 3. 板子上运行
 
@@ -171,7 +173,7 @@ VERSION = 0x0001020D
 * `golden_reference_ci`：逐条比较 Python 参考结果和 HLS/板上输出；
 * `vivado_report_gate`：读取 Vivado 时序和资源报告，按阈值给出 PASS/FAIL。
 
-每个目录的 README 都写了适用场景、用法、失效条件和验证记录。大模型协作过程见 `report/AI_COLLABORATION_RECORD.md`。
+每个目录的 README 都写了适用场景、用法、失效条件和验证记录。大模型协作过程见 `report/ai_collaboration_record.md`。
 
 ## 已知问题
 
@@ -188,4 +190,4 @@ VERSION = 0x0001020D
 
 本项目新增部分使用 BSD-3-Clause。基础 BD、`rgb2dvi` 和 OV5640 配置表来自
 [Pynq-CV-OV5640](https://github.com/xupsh/Pynq-CV-OV5640)。
-第三方说明见 `THIRD_PARTY_NOTICES.md`。
+第三方说明见 `third_party_notices.md`。

@@ -20,7 +20,7 @@
 | 同源分屏 | 同帧 RMS | `13_verify_split.ipynb` | RMS <3 | `docs/08_report_evidence.md` | 板 |
 | 时序 | Vivado summary | `report_timing_summary` | WNS ≥0，失败端点 0 | `docs/results/timing.md` | Vivado |
 | 资源 | Vivado utilization | `tools/export_vivado_reports.tcl` | LUT 29.82% / FF 19.49% / BRAM 22.50% / DSP 26.36% | `stage13_split/reports/stage13/util_final.rpt` | Vivado |
-| CSim | HLS 测试向量 | `vitis_hls -f script.tcl` | 124 条 fail=0 | `stage05_mlp_hls/VERIFY.md` | HLS |
+| CSim | HLS 测试向量 | `vitis_hls -f script.tcl` | 124 条 fail=0 | `stage05_mlp_hls/verify.md` | HLS |
 
 ## 2. 当前结论的适用范围
 
@@ -40,4 +40,4 @@ bash run_all.sh test
 bash run_all.sh eval
 ```
 
-如果只想跑不需要板子的部分，以上两条即可；板上验证按 `stageXX/VERIFY.md` 和本索引逐项执行。
+如果只想跑不需要板子的部分，以上两条即可；板上验证按 `stageXX/verify.md` 和本索引逐项执行。
